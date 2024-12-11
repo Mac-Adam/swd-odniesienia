@@ -1,36 +1,13 @@
 Metoda punktów odniesienia (RSM) jest jedną z kluczowych technik wykorzystywanych w optymalizacji wielokryterialnej. Jej celem jest pomoc w podejmowaniu decyzji poprzez stworzenie modelu preferencji na podstawie zbioru punktów odniesienia w przestrzeni kryteriów. Punkty odniesienia reprezentują kluczowe wartości kryteriów, które mają szczególne znaczenie dla decydenta lub eksperta.
 
-Podstawowe pojęcia
-Optymalizacja wielokryterialna zakłada pracę z:
+Optymalizacja wielokryterialna zakłada pracę z wektorem funkcji celu (F), czyli zbiorem kryteriów, które mają być minimalizowane lub maksymalizowane. Odbywa się to w przestrzeni kryteriów (E), która definiuje obszar, w którym punkty decyzyjne są oceniane. Kluczowym elementem tej przestrzeni jest zbiór Pareto (P(U)), zawierający decyzje niezdominowane, które są optymalne w sensie wielokryterialnym. Ważnym pojęciem są również punkty odniesienia (Q), które są elementami przestrzeni kryteriów reprezentującymi pożądane lub niepożądane wartości z perspektywy decydenta.
 
-Wektorem funkcji celu (F) – zbiór kryteriów, które mają być minimalizowane lub maksymalizowane.
-Przestrzenią kryteriów (E) – obszarem, w którym punkty decyzyjne są oceniane.
-Zbiorem Pareto (P(U)) – zbiorem decyzji niezdominowanych, które są optymalne w sensie wielokryterialnym.
-Punktami odniesienia (Q) – elementami przestrzeni kryteriów reprezentującymi pożądane lub niepożądane wartości dla decydenta.
-Koncepcja punktów odniesienia
-Metoda RSM opiera się na agregacji punktów odniesienia, które są klasyfikowane według ich znaczenia:
+Metoda RSM opiera się na agregacji punktów odniesienia, które są klasyfikowane według ich znaczenia. Punkty A0, zwane granicą optymalności, definiują minimalny akceptowalny poziom optymalizacji w przestrzeni kryteriów. Punkty A1, określane jako idealne, przedstawiają najlepsze możliwe wartości kryteriów i są również nazywane punktami aspiracji. Punkty A2, związane z obecnym stanem (status quo), reprezentują wartości kryteriów, które powinny zostać przekroczone w procesie decyzyjnym. Ostatnią grupą są punkty A3, zwane anty-idealnymi, które wskazują najbardziej niepożądane rozwiązania w przestrzeni kryteriów. Każdy z tych punktów odniesienia ma istotny wpływ na konstrukcję funkcji użyteczności, która służy do oceny i porządkowania możliwych alternatyw decyzyjnych.
 
-Punkty A0 (granica optymalności) – definiują minimalny akceptowalny poziom optymalizacji w przestrzeni kryteriów.
-Punkty A1 (idealne) – przedstawiają najlepsze możliwe wartości kryteriów z perspektywy decydenta. Są także określane jako punkty aspiracji.
-Punkty A2 (status quo) – wartości kryteriów reprezentujące obecny stan, który powinien zostać przekroczony w procesie decyzyjnym.
-Punkty A3 (anty-idealne) – określają najbardziej niepożądane rozwiązania w przestrzeni kryteriów.
-Każdy z tych punktów odniesienia wpływa na konstrukcję funkcji użyteczności, która ocenia i porządkuje możliwe alternatywy decyzyjne.
+Algorytm działania metody RSM składa się z kilku kroków. Na początku konstruowana jest funkcja skoringowa, która opiera się na relacjach między punktami aspiracyjnymi a punktami status quo. Funkcja ta pozwala klasyfikować alternatywy, uwzględniając ich odległość od punktów odniesienia. Następnie obliczane są odległości dla każdej alternatywy w przestrzeni decyzji od punktów odniesienia, przy użyciu wybranej metryki. Kolejnym krokiem jest budowa rankingu, w którym alternatywy są porządkowane według wartości funkcji skoringowej, co umożliwia wybór najbardziej preferowanego rozwiązania kompromisowego. Algorytm weryfikuje także, czy punkty odniesienia są zgodne zarówno wewnętrznie, jak i wzajemnie. W przypadku wykrycia niespójności punkty odniesienia mogą być odpowiednio korygowane. Ostatecznym etapem procesu jest analiza wyników i ocena ich zgodności z celami decyzyjnymi. Jeśli wyniki okazują się niezadowalające, możliwe jest przeprowadzenie iteracji w celu uzyskania lepszych rezultatów.
 
-Algorytm działania metody RSM
-Konstrukcja funkcji skoringowej: Opiera się ona na relacjach między punktami aspiracyjnymi i status quo. Funkcja ta klasyfikuje alternatywy, uwzględniając ich odległość od punktów odniesienia.
-Wyznaczanie odległości: Dla każdej alternatywy w przestrzeni decyzji oblicza się odległość od punktów odniesienia przy użyciu wybranej metryki.
-Budowa rankingu: Alternatywy są porządkowane na podstawie wartości funkcji skoringowej, co umożliwia wskazanie najbardziej preferowanego rozwiązania kompromisowego.
-Weryfikacja niesprzeczności punktów: Algorytm sprawdza, czy punkty odniesienia są zgodne wewnętrznie i wzajemnie, a w razie potrzeby wprowadza korekty.
-Analiza wyników: Przeprowadzana jest ewaluacja wyników pod kątem spełnienia celów decyzyjnych. Jeśli wyniki są niezadowalające, proces może być iterowany.
-Zastosowania
-Metoda RSM znajduje zastosowanie w:
+Metoda RSM znajduje szerokie zastosowanie w różnych dziedzinach. Jest wykorzystywana w analizie wielokryterialnej efektywności produktów, ocenie decyzji w złożonych systemach produkcyjnych, optymalizacji procesów zarządzania w gospodarce, a także w podejmowaniu decyzji strategicznych i planowaniu projektów. Dzięki elastyczności w uwzględnianiu preferencji decydenta oraz zdolności do integracji z zaawansowanymi systemami informatycznymi metoda ta jest cenionym narzędziem w praktyce.
 
-analizie wielokryterialnej efektywności produktów,
-ocenie decyzji w złożonych systemach produkcyjnych,
-optymalizacji procesów zarządzania w różnych dziedzinach gospodarki,
-podejmowaniu decyzji strategicznych i planowaniu projektów.
-Wizualizacja i implementacja
-RSM może być zintegrowana z graficznymi interfejsami użytkownika (GUI), umożliwiając wizualizację klas punktów odniesienia i ich wpływu na wybór alternatyw. Przykładowe wykresy przedstawiają rozkład punktów odniesienia oraz porządek rankingowy punktów decyzyjnych.
+RSM może być także zintegrowana z graficznymi interfejsami użytkownika (GUI), co umożliwia wizualizację klas punktów odniesienia oraz ich wpływu na wybór alternatyw. Przykładowe wykresy mogą przedstawiać rozkład punktów odniesienia w przestrzeni kryteriów, a także ranking punktów decyzyjnych na podstawie wartości funkcji skoringowej. Tego rodzaju wizualizacje pomagają w interpretacji wyników oraz ułatwiają podejmowanie decyzji.
 
-Wnioski
-Metoda punktów odniesienia to wszechstronne narzędzie w optymalizacji wielokryterialnej, które pozwala na efektywne uwzględnienie preferencji decydenta. Dzięki możliwości iteracyjnej analizy oraz integracji w systemach komputerowych RSM staje się szczególnie użyteczna w złożonych procesach decyzyjnych.
+Metoda punktów odniesienia stanowi wszechstronne narzędzie w optymalizacji wielokryterialnej, które umożliwia efektywne uwzględnienie preferencji decydenta. Jej zaletami są iteracyjny charakter analizy, możliwość integracji w systemach komputerowych oraz zastosowanie w złożonych procesach decyzyjnych. Dzięki tym cechom RSM przyczynia się do podejmowania bardziej świadomych i trafnych decyzji, co czyni ją niezwykle użyteczną w praktycznych zastosowaniach.
