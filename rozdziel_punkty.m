@@ -1,6 +1,6 @@
 function [A1,A2,res] = rozdziel_punkty(Dane,min_max)
 A1 = min_max.*klp_full(min_max.*Dane);
-A2 = -min_max.*klp_full(-min_max.*Dane);
+A2 = (-min_max).*klp_full((-min_max).*Dane);
 A1_sorted = sortrows(A1);
 A2_sorted = sortrows(A2);
 i = 1;
@@ -27,26 +27,5 @@ while k < size(Dane,1)
     k = k+1;
     n = n+1;
 end
-A1_final = [];
-A2_final = [];
-i = 1;
-j = 1;
-while (i<=maxi) || (j<=maxj)
-    if all(A1_sorted(i,:) == A2_sorted(j,:))
-        i = i+1;
-        j = j+1;
-        continue
-    end
-    if A1_sorted(i,1) > A2_sorted(j,1)
-        A2_final = [A2_final;A2_sorted(j,:)];
-        j = j+1;
-    else
-          A1_final = [A1_final;A1_sorted(i,:)];
-        i = i+1;
-    end
-
-end
-A1 = A1_final;
-A2 = A2_final;
 
 end
